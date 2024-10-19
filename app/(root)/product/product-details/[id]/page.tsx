@@ -56,7 +56,7 @@ const page = async({params}:{params:{id:string} }) => {
                     <p className='mt-2 text-semibold text-opacity-70 text-black'>
                         SKU: {Math.random()*500}
                     </p>
-                    <AddToCart></AddToCart>
+                    <AddToCart product ={ singleProduct }></AddToCart>
                 </div>
             </div>
             <div className='w-4/5 mt-16 mx-auto'>

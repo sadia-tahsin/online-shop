@@ -9,7 +9,8 @@ export interface CartItem {
     rating: {
         rate: number;
         count: number;
-    } ,quantity:number
+    } ,
+    quantity:number
 }
 interface CartState{
     items: CartItem[]
