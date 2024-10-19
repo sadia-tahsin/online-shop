@@ -5,12 +5,26 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '../ui/button';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '@/redux/store/cartSlice';
+import { RootState } from '@/redux/store/store';
+import { useToast } from '@/hooks/use-toast';
 type props = {
     product: product
 }
 const ProductCard = ({ product }: props) => {
     const num = Math.round(product.rating.rate);
     const ratingArray = new Array(num).fill(0);
+    const {toast} = useToast()
+    const dispatch = useDispatch()
+
+    const addToCartHandler = (product:product)=>{
+      toast({
+        description:"Item added successfully",
+        variant:"success"
+      })  
+      dispatch(addItem(product))
+    }
     return (
       <div className='p-4 shadow-lg bg-white rounded-lg'>
       <div className='w-full h-auto'>
@@ -47,7 +61,7 @@ const ProductCard = ({ product }: props) => {
           </p>
         </div>
         <div className='mt-4 flex space-x-2'>
-          <Button size={"icon"}>
+          <Button onClick={()=>addToCartHandler(product)} size={"icon"}>
             <ShoppingBag size={16}></ShoppingBag>
           </Button>
           <Button size={"icon"} className='bg-red-400'>
