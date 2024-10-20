@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
-import { read } from "fs";
+
 import Link from "next/link";
 type Props = {
   items: CartItem[];
@@ -45,7 +45,8 @@ const dispatch = useDispatch()
       {items.length>0 && (
         <div>{
             items?.map((item) =>{
-                return (<div key={item.id} className="pb-4 border-b-2 border-gray-300 border-opacity-60 p-4">
+                return (
+                <div key={item.id} className="pb-4 border-b-2 border-gray-300 border-opacity-60 p-4">
                     <Image src={item?.image} alt="image" width={60} height={60} className="object-cover mb-4"/>
                     <div>
                         <h1 className="text-sm w-4/5 font-semibold truncate">{item?.title}</h1>
@@ -56,15 +57,16 @@ const dispatch = useDispatch()
                         <Button size={"sm"} onClick={()=>handleAddToCart(item)} >Add</Button>
                         <Button size={"sm"} variant={"destructive"} onClick={()=>{handleRemoveFromCart(item.id)}}>Remove</Button>
                     </div>
-                    <Link href="/cart">
-                    <Button className="w-full">
-                       View Cart
-                    </Button>
-                    </Link>
+                   
                     
                 </div>)
             })
-            }</div>
+            }
+             <Link href="/cart">
+                    <Button className="w-full">
+                       View Cart
+                    </Button>
+                    </Link></div>
       )}
     </div>
   );

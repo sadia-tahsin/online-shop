@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
-import { addItem, CartItem } from "@/redux/store/cartSlice";
+import { addItem } from "@/redux/store/cartSlice";
 import { product } from "@/types";
 import React from "react";
 import { useDispatch } from "react-redux";

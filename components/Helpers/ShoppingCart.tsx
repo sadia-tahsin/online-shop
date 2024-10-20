@@ -1,6 +1,6 @@
 'use client'
 import { RootState } from '@/redux/store/store';
-import { ShoppingBag, ShoppingBagIcon} from 'lucide-react';
+import {  ShoppingBagIcon} from 'lucide-react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
