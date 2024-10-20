@@ -46,7 +46,7 @@
 // };
 
 // export default CheckoutPage;
-
+'use client'
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
 import CheckoutForm from "@/components/Helpers/CheckoutForm";

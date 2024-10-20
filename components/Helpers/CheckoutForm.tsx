@@ -88,7 +88,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ cartItems }) => {
 
   return (
     <div>
-      <Button onClick={handleCheckout} disabled={loading}>
+      <Button onClick={handleCheckout} disabled={loading} className="bg-orange-600 w-full">
         {loading ? "Processing..." : "Checkout"}
       </Button>
     </div>
