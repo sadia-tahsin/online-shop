@@ -5,6 +5,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { read } from "fs";
+import Link from "next/link";
 type Props = {
   items: CartItem[];
 };
@@ -55,6 +56,12 @@ const dispatch = useDispatch()
                         <Button size={"sm"} onClick={()=>handleAddToCart(item)} >Add</Button>
                         <Button size={"sm"} variant={"destructive"} onClick={()=>{handleRemoveFromCart(item.id)}}>Remove</Button>
                     </div>
+                    <Link href="/cart">
+                    <Button className="w-full">
+                       View Cart
+                    </Button>
+                    </Link>
+                    
                 </div>)
             })
             }</div>
