@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '../ui/button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem } from '@/redux/store/cartSlice';
-import { RootState } from '@/redux/store/store';
+//import { RootState } from '@/redux/store/store';
 import { useToast } from '@/hooks/use-toast';
 type props = {
     product: product
@@ -43,7 +43,7 @@ const ProductCard = ({ product }: props) => {
         </Link>
         {/* rating */}
         <div className='flex items-center'>
-            {ratingArray.map((x)=>{
+            {ratingArray.map(()=>{
               return <StarIcon key={Math.random()*100}
               size={16}
               fill='yellow'
