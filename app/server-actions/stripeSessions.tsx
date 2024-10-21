@@ -37,9 +37,7 @@ import { Stripe } from "stripe";
 
 const apiKey = process.env.STRIPE_SECRET_KEY as string;
 
-const stripe = new Stripe(apiKey, {
-  apiVersion: '2022-11-15',
-});
+const stripe = new Stripe(apiKey);
 
 interface CartItem {
   title: string;
